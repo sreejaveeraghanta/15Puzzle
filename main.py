@@ -16,12 +16,14 @@ class button:
         self.y = y
         self.text = text
         self.clicked = False
+
     def draw(self, win):
         pygame.draw.rect(win, (250, 250, 250), (self.x, self.y,104, 104 ), 0, 5)
         pygame.draw.rect(win, self.color, (self.x+2, self.y+2, 100, 100), 0, 5)
         if self.text != "":
             font = numbers.render(self.text, True, (0,0,0))
             win.blit(font, (self.x + 45, self.y +45))
+
     def drawStart(self):
         pygame.draw.rect(screen, (0, 0, 0), (self.x, self.y, 100, 20), 0)
         theText = start.render(self.text, True, (250, 250, 250))
@@ -32,8 +34,10 @@ class button:
             if pos[1] > self.y and pos[1] < self.y + 100:
                 return True
         return False
+
     def move(self, newPosX, newPosY):
         pygame.draw.rect(screen, self.color, (newPosX, newPosY, 104, 104), 0, 5)
+
     def adjacent(self, button):
         if ((blank.x == button.x + 105 or blank.x == button.x - 105) and blank.y == button.y):
             return True
