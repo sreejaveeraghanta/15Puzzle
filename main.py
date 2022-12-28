@@ -1,5 +1,6 @@
 import pygame
 import random
+
 pygame.init()
 scrn_width = 415
 scrn_height = 450
